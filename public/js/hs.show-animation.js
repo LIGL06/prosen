@@ -1,1 +1,111 @@
-!function(t){"use strict";t.HSCore.components.HSShowAnimation={_baseConfig:{afterShow:function(){}},pageCollection:t(),init:function(i,a){if(this.collection=i&&t(i).length?t(i):t(),t(i).length)return this.config=a&&t.isPlainObject(a)?t.extend({},this._baseConfig,a):this._baseConfig,this.config.itemSelector=i,this.initShowEffect(),this.pageCollection},initShowEffect:function(){var i=this,a=i.config,o=i.pageCollection;this.collection.each(function(n,e){var c=t(e),s=c.data("link-group"),h=t(c.data("target")),d=h.data("target-group"),f=c.data("animation-in");c.on("click",function(o){o.preventDefault(),t(this).hasClass("active")||(t('[data-link-group="'+s+'"]').removeClass("active"),c.addClass("active"),f?i.addAnimation(h,d,f,a):i.hideShow(h,d,a))}),o=o.add(c)})},hideShow:function(i,a,o){t('[data-target-group="'+a+'"]').hide().css("opacity",0),i.show().css("opacity",1),o.afterShow()},addAnimation:function(i,a,o,n){t('[data-target-group="'+a+'"]').hide().css("opacity",0).removeClass("animated "+o),i.show(),n.afterShow(),setTimeout(function(){i.css("opacity",1).addClass("animated "+o)},50)}}}(jQuery);
+/**
+ * Show Animation wrapper.
+ *
+ * @author Htmlstream
+ * @version 1.0
+ *
+ */
+;(function ($) {
+  'use strict';
+  $.HSCore.components.HSShowAnimation = {
+    /**
+     *
+     *
+     * @var Object _baseConfig
+     */
+    _baseConfig: {
+      afterShow: function() {}
+    },
+
+    /**
+     *
+     *
+     * @var jQuery pageCollection
+     */
+    pageCollection: $(),
+
+    /**
+     * Initialization of Show Animation wrapper.
+     *
+     * @param String selector (optional)
+     * @param Object config (optional)
+     *
+     * @return jQuery pageCollection - collection of initialized items.
+     */
+
+    init: function (selector, config) {
+      this.collection = selector && $(selector).length ? $(selector) : $();
+      if (!$(selector).length) return;
+
+      this.config = config && $.isPlainObject(config) ?
+        $.extend({}, this._baseConfig, config) : this._baseConfig;
+
+      this.config.itemSelector = selector;
+
+      this.initShowEffect();
+
+      return this.pageCollection;
+    },
+
+    initShowEffect: function () {
+      //Variables
+      var $self = this,
+        config = $self.config,
+        collection = $self.pageCollection;
+
+      //Actions
+      this.collection.each(function (i, el) {
+        //Variables
+        var $this = $(el),
+          linkGroup = $this.data('link-group'),
+          $target = $($this.data('target')),
+          targetGroup = $target.data('target-group'),
+          animateIn = $this.data('animation-in');
+
+        $this.on('click', function(e) {
+          e.preventDefault();
+
+          if($(this).hasClass('active')) return;
+
+          $('[data-link-group="'+linkGroup+'"]').removeClass('active');
+          $this.addClass('active');
+
+          if(animateIn) {
+            $self.addAnimation($target, targetGroup, animateIn, config);
+          } else {
+            $self.hideShow($target, targetGroup, config);
+          }
+        });
+
+        // Actions
+        collection = collection.add($this);
+      });
+    },
+
+    hideShow: function (target, targetgroup, config) {
+      $('[data-target-group="' + targetgroup + '"]')
+        .hide().css('opacity', 0);
+
+      target.show().css('opacity', 1);
+
+      config.afterShow();
+    },
+
+    addAnimation: function (target, targetgroup, animatein, config) {
+      $('[data-target-group="' + targetgroup + '"]')
+        .hide()
+        .css('opacity', 0)
+        .removeClass('animated ' + animatein);
+
+      target.show();
+
+      config.afterShow();
+
+      setTimeout(function () {
+        target
+          .css('opacity', 1)
+          .addClass('animated ' + animatein);
+      }, 50);
+    }
+  };
+})(jQuery);
