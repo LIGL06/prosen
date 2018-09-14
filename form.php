@@ -31,6 +31,7 @@ if($email!=null){
     
     // Additional headers
     $headers[] = 'To: Usuario <'. $email .'>';
+    $headers[] = 'Bcc: PROSEN <contacto@prosen.com.mx>';
     $headers[] = 'From: Contacto PROSEN <contacto@prosen.com.mx>';
     
     // Mail it
