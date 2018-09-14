@@ -23,7 +23,6 @@
     <link rel="mask-icon" href="./public/img/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#9f00a7">
     <meta name="theme-color" content="#ffffff">
-    <!-- Google Fonts -->
     <!-- CSS Global Compulsory -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <!-- CSS Implementing Plugins -->
@@ -163,10 +162,10 @@
                 </div>
                 <div class="col-md-6 offset-md-2">
                     <h5>Contacto</h5>
-                    <form>
+                    <form method="POST" action="form.php">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Correo electrónico</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Escriba email">
+                            <label for="email">Correo electrónico</label>
+                            <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="Escriba email">
                             <small id="emailHelp" class="form-text text-muted">No compartimos información de nuestros usuarios.</small>
                         </div>
                         <button type="submit" class="btn btn-primary">Enviar</button>
