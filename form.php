@@ -20,7 +20,7 @@ if($email!=null){
       <div class='card text-center col'>
         <img class='card-img-top' src='http://res.cloudinary.com/hammock-software/image/upload/v1535418201/Untitled-1_gtggiz.png' alt='Card image cap'>
           <div class='card-body'>
-            <p class='card-text'>Gracias por querer estar en contacto con nosotros. <br> Por favor revisa tu bandeja de correo <b>no deseado</b>. </p>
+            <p class='card-text'>Gracias por querer estar en contacto con nosotros. <br> Nostros responderemos pronto, revisa tu bandeja de correo <b>no deseado</b>. </p>
           </div>
         </div>
       </div>
