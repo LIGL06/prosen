@@ -104,3 +104,8 @@ li{
 .overflow-hidden {
     overflow: hidden;
 }
+#catalogModal li, #cotizeModal li{
+    font-size: 12px!important;
+    text-align: left;
+    padding-bottom: 5px;
+}

@@ -60,7 +60,21 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    ...
+                    <div class="container">
+                        <div class="row">
+                            <div class="col m4">
+                                <li>Ácidos</li>
+                                <li>Aditivos</li>
+                                <li>Álcalis</li>
+                                <li>Aminas</li>
+                                <li>Boratos</li>
+                                <li>Carbonatos</li>
+                            </div>
+                            <div class="col m4">
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Salir</button>
@@ -72,8 +86,7 @@
     <!-- /catalogModal -->
 
     <!-- cotizeModal -->
-    <div class="modal fade" id="cotizeModal" tabindex="-1" role="dialog" aria-labelledby="cotizeModalLabel"
-        aria-hidden="true">
+    <div class="modal fade" id="cotizeModal" tabindex="-1" role="dialog" aria-labelledby="cotizeModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -83,7 +96,46 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    ...
+                    <div class="container">
+                        <div class="row">
+                            <div class="col m4 text-center">
+                                <h5>2 Cámaras</h5> <small>$4,700 MXN*</small>
+                                <hr>
+                                <li>Grabadora de video (DVR) HD720p 4 canales</li>
+                                <li>Cámaras 720p de alta calidad con 20m de alcance</li>
+                                <li>20m de cable por cámara</li>
+                                <li>Disco duro 1TB WD Purple para 1 mes de grabación continua</li>
+                                <li>Puertos HDMI/VGA</li>
+                                <li>Visualización remota desde cualquier dispositivo móvil</li>
+                            </div>
+                            <div class="col m4 text-center">
+                                <h5>4 Cámaras</h5> <small>$6,400 MXN*</small>
+                                <hr>
+                                <li>Grabadora de video (DVR) HD720p 4 canales</li>
+                                <li>Cámaras 720p de alta calidad con 20m de alcance</li>
+                                <li>20m de cable por cámara</li>
+                                <li>Disco duro 1TB WD Purple para 2 semanas de grabación continua</li>
+                                <li>Puertos HDMI/VGA</li>
+                                <li>Visualización remota desde cualquier dispositivo móvil</li>
+                            </div>
+                            <div class="col m4 text-center">
+                                <h5>8 Cámaras</h5> <small>$10,400 MXN*</small>
+                                <hr>
+                                <li>Grabadora de video (DVR) HD720p 4 canales</li>
+                                <li>Cámaras 720p de alta calidad con 20m de alcance</li>
+                                <li>20m de cable por cámara</li>
+                                <li>Disco duro 1TB WD Purple para 1 semana de grabación continua</li>
+                                <li>Puertos HDMI/VGA</li>
+                                <li>Visualización remota desde cualquier dispositivo móvil</li>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col m12 text-center">
+                                <h5>¡Pregunta por nuestros paquetes personalizados!</h5>
+                                <small class="text-muted">*Precio +IVA</small>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Salir</button>
@@ -154,7 +206,7 @@
                             <li>Caja fría</li>
                             <b>Entre otros</b>
                         </ul>
-                        <button type="button" class="btn btn-lg btn-block btn-primary">Contáctanos</button>
+                        <button type="button" class="btn btn-lg btn-block btn-primary" id="contactButton">Contáctanos</button>
                     </div>
                 </div>
                 <div class="card mb-4 shadow-sm">
@@ -186,7 +238,7 @@
                             <li>Videoportero</li>
                             <b>Entre otros</b>
                         </ul>
-                        <button type="button" class="btn btn-lg btn-block btn-primary" data-toggle="modal" data-target="#cotizeModal">Cotiza</button>
+                        <button type="button" class="btn btn-lg btn-block btn-primary" data-toggle="modal" data-target="#cotizeModal">Precios</button>
                     </div>
                 </div>
             </div>
@@ -233,6 +285,9 @@
                     required: true,
                 }
             }
+        });
+        $("#contactButton").click(function () {
+            $("#email").focus();
         });
         $('#formButton').on('click', function (event) {
             event.preventDefault();
