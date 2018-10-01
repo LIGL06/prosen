@@ -47,6 +47,51 @@
             </div>
         </nav>
     </head>
+
+    <!-- catalogModal -->
+    <div class="modal fade" id="catalogModal" tabindex="-1" role="dialog" aria-labelledby="catalogModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="catalogModalLabel">Material Químico</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Salir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- /catalogModal -->
+
+    <!-- cotizeModal -->
+    <div class="modal fade" id="cotizeModal" tabindex="-1" role="dialog" aria-labelledby="cotizeModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cotizeModalLabel">Cotización Videovigilancia</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Salir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <section id="home">
         <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -126,7 +171,7 @@
                             <li>Carbonatos</li>
                             <b>Entre otros</b>
                         </ul>
-                        <button type="button" class="btn btn-lg btn-block btn-primary">Cátalogo</button>
+                        <button type="button" class="btn btn-lg btn-block btn-primary" data-toggle="modal" data-target="#catalogModal">Cátalogo</button>
                     </div>
                 </div>
                 <div class="card mb-4 shadow-sm">
@@ -141,7 +186,7 @@
                             <li>Videoportero</li>
                             <b>Entre otros</b>
                         </ul>
-                        <button type="button" class="btn btn-lg btn-block btn-primary">Cotiza</button>
+                        <button type="button" class="btn btn-lg btn-block btn-primary" data-toggle="modal" data-target="#cotizeModal">Cotiza</button>
                     </div>
                 </div>
             </div>
@@ -196,9 +241,11 @@
                 type: "POST",
                 url: form.attr('action'),
                 data: form.serialize()
-            }).done(function(msg){
+            }).done(function (msg) {
                 alert('Correo enviado');
-                $('#emailHelp').append("<small class='form-text text-muted'>Gracias, por favor revisa tu  bandeja de correo <b>no deseado</b>.</small>");
+                $('#emailHelp').append(
+                    "<small class='form-text text-muted'>Gracias, por favor revisa tu  bandeja de correo <b>no deseado</b>.</small>"
+                );
             });
         });
     </script>
