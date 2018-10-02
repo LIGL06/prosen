@@ -323,24 +323,7 @@
     <!-- JS Front -->
     <script>
         $('.carousel').carousel();
-        $("#contactForm").validate({
-            submitHandler: function (form) {
-                form.submit();
-                $('#formButton').on('click', function (event) {
-                    event.preventDefault();
-                    var form = $('#contactForm');
-                    $.ajax({
-                        type: "POST",
-                        url: form.attr('action'),
-                        data: form.serialize()
-                    }).done(function (msg) {
-                        alert('Correo enviado');
-                        $('#emailHelp').append(
-                            "<small class='form-text text-muted'>Gracias, por favor revisa tu  bandeja de correo <b>no deseado</b>.</small>"
-                        );
-                    });
-                });
-            },
+        $('#contactForm').validate({
             rules: {
                 email: {
                     required: true,
@@ -348,6 +331,18 @@
                 name: {
                     required: true,
                 }
+            },
+            submitHandler: function (form) {
+                $.ajax({
+                    type: "POST",
+                    url: $(form).attr('action'),
+                    data: $(form).serialize()
+                }).done(function (msg) {
+                    alert('Correo enviado');
+                    $('#emailHelp').append(
+                        "<small class='form-text text-muted'>Gracias, por favor revisa tu  bandeja de correo <b>no deseado</b>.</small>"
+                    );
+                });
             }
         });
         $("#contactButton").click(function () {
