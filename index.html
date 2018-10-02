@@ -63,19 +63,19 @@
                     <div class="container">
                         <div class="row">
                             <div class="col m3 text-center">
-                                <h5>Álcali</h5>
+                                <b>Álcali</b>
                                 <hr>
                             </div>
                             <div class="col m3 text-center">
-                                <h5>Roche</h5>
+                                <b>Roche</b>
                                 <hr>
                             </div>
                             <div class="col m3 text-center">
-                                <h5>X-Chem</h5>
+                                <b>x-chem</b>
                                 <hr>
                             </div>
                             <div class="col m3 text-center">
-                                <h5>P.M.V.</h5>
+                                <b>P.M.V.</b>
                                 <hr>
                             </div>
                         </div>
@@ -140,7 +140,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col m4 text-center">
-                                <h5>2 Cámaras</h5> <small>$4,700 MXN*</small>
+                                <b>2 Cámaras</b> <small>$4,700 MXN*</small>
                                 <hr>
                                 <li>Grabadora de video (DVR) HD720p 4 canales</li>
                                 <li>Cámaras 720p de alta calidad con 20m de alcance</li>
@@ -150,7 +150,7 @@
                                 <li>Visualización remota desde cualquier dispositivo móvil</li>
                             </div>
                             <div class="col m4 text-center">
-                                <h5>4 Cámaras</h5> <small>$6,400 MXN*</small>
+                                <b>4 Cámaras</b> <small>$6,400 MXN*</small>
                                 <hr>
                                 <li>Grabadora de video (DVR) HD720p 4 canales</li>
                                 <li>Cámaras 720p de alta calidad con 20m de alcance</li>
@@ -160,7 +160,7 @@
                                 <li>Visualización remota desde cualquier dispositivo móvil</li>
                             </div>
                             <div class="col m4 text-center">
-                                <h5>8 Cámaras</h5> <small>$10,400 MXN*</small>
+                                <b>8 Cámaras</b> <small>$10,400 MXN*</small>
                                 <hr>
                                 <li>Grabadora de video (DVR) HD720p 4 canales</li>
                                 <li>Cámaras 720p de alta calidad con 20m de alcance</li>
@@ -298,6 +298,11 @@
                     <h5>Contacto</h5>
                     <form method="POST" action="form.php" id="contactForm">
                         <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input type="text" class="form-control" name="name" id="name" aria-describedby="nameHelp"
+                                placeholder="Escriba nombre completo">
+                        </div>
+                        <div class="form-group">
                             <label for="email">Correo electrónico</label>
                             <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp"
                                 placeholder="Escriba email">
@@ -321,29 +326,32 @@
         $("#contactForm").validate({
             submitHandler: function (form) {
                 form.submit();
+                $('#formButton').on('click', function (event) {
+                    event.preventDefault();
+                    var form = $('#contactForm');
+                    $.ajax({
+                        type: "POST",
+                        url: form.attr('action'),
+                        data: form.serialize()
+                    }).done(function (msg) {
+                        alert('Correo enviado');
+                        $('#emailHelp').append(
+                            "<small class='form-text text-muted'>Gracias, por favor revisa tu  bandeja de correo <b>no deseado</b>.</small>"
+                        );
+                    });
+                });
             },
             rules: {
                 email: {
+                    required: true,
+                },
+                name: {
                     required: true,
                 }
             }
         });
         $("#contactButton").click(function () {
             $("#email").focus();
-        });
-        $('#formButton').on('click', function (event) {
-            event.preventDefault();
-            var form = $('#contactForm');
-            $.ajax({
-                type: "POST",
-                url: form.attr('action'),
-                data: form.serialize()
-            }).done(function (msg) {
-                alert('Correo enviado');
-                $('#emailHelp').append(
-                    "<small class='form-text text-muted'>Gracias, por favor revisa tu  bandeja de correo <b>no deseado</b>.</small>"
-                );
-            });
         });
     </script>
 </body>
