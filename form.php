@@ -24,8 +24,9 @@ if($email!=null && $name!=null){
         <img src='http://res.cloudinary.com/hammock-software/image/upload/v1535418201/Untitled-1_gtggiz.png' alt='Card image cap' style='box-sizing: border-box;vertical-align: middle;border-style: none;page-break-inside: avoid;width: 100%;border-top-left-radius: calc(.25rem - 1px);border-top-right-radius: calc(.25rem - 1px);'>
           <div style='box-sizing: border-box;-ms-flex: 1 1 auto;flex: 1 1 auto;padding: 1.25rem;'>
             <h5 style='box-sizing: border-box;margin-top: 0;margin-bottom: .5rem;font-family: inherit;font-weight: 500;line-height: 1.2;color: inherit;font-size: 1.25rem;text-align: center!important;'>Hola, $name</h5>
-            <p style='box-sizing: border-box;margin-top: 0;margin-bottom: .5rem;font-family: inherit;font-weight: 500;line-height: 1.2;color: inherit;font-size: 1.25rem;text-align: center!important;'>Pronto algun asesor de PROSEN te atendera con respecto a <b>$service</b>.</p>
-            <p style='box-sizing: border-box;margin-top: 0;margin-bottom: 0;orphans: 3;widows: 3;'>Gracias por querer estar en contacto con nosotros. <br style='box-sizing: border-box;'> Por favor revisa tu bandeja de correo <b style='box-sizing: border-box;font-weight: bolder;'>no deseado</b> de manera continua. </p>
+            <p style='box-sizing: border-box;margin-top: 0;margin-bottom: .5rem;font-family: inherit;font-weight: 500;line-height: 1.2;color: inherit;font-size: 1.25rem;text-align: center!important;'>Gracias por ponerte contacto con nosotros. </p>
+            <p style='box-sizing: border-box;margin-top: 0;margin-bottom: .5rem;font-family: inherit;font-weight: 500;line-height: 1.2;color: inherit;font-size: 1.25rem;text-align: center!important;'>Pronto uno de nuestros asesores te atenderá en el área de tu interés (<b>$service</b>).</p>
+            <br style='box-sizing: border-box;'> Por favor revisa tu bandeja de correo <b style='box-sizing: border-box;font-weight: bolder;'>no deseado</b> de manera continua.
           </div>
         </div>
       </div>
@@ -40,7 +41,7 @@ if($email!=null && $name!=null){
     
     // Additional headers
     $headers[] = "To: $name <$email>";
-    $headers[] = 'Bcc: Julio Morales <jmorales@prosen.com.mx>, Servicio al cliente PROSEN <sac@prosen.com.mx>, <luis.garcialuna@outlook.com>';
+    $headers[] = 'Bcc: Julio Morales <jmorales@prosen.com.mx>, Servicio al cliente PROSEN <sac@prosen.com.mx>';
     $headers[] = 'From: Servicio al cliente PROSEN <sac@prosen.com.mx>';
     
     // print_r($message);
