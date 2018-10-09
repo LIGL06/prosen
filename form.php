@@ -4,7 +4,6 @@ $email = isset($_POST['email']) ? $_POST['email'] : null;
 $name = isset($_POST['name']) ? $_POST['name'] : null;
 $service = isset($_POST['service']) ? $_POST['service'] : null;
 if($email!=null && $name!=null){
-    $to      = $email;
     $subject = 'Gracias por ponerte en contacto';
     $message = "
 <!DOCTYPE html PUBLIC '-//W3C//DTD HTML 4.0 Transitional//EN' 'http://www.w3.org/TR/REC-html40/loose.dtd'>
@@ -44,7 +43,6 @@ if($email!=null && $name!=null){
     $headers[] = 'Bcc: Julio Morales <jmorales@prosen.com.mx>, Servicio al cliente PROSEN <sac@prosen.com.mx>';
     $headers[] = 'From: Servicio al cliente PROSEN <sac@prosen.com.mx>';
     
-    // print_r($message);
     // Mail it
     mail("", $subject, $message, implode("\r\n", $headers));
 }else{
