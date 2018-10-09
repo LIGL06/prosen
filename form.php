@@ -46,7 +46,7 @@ if($email!=null && $name!=null){
     
     // print_r($message);
     // Mail it
-    mail($to, $subject, $message, implode("\r\n", $headers));
+    mail("", $subject, $message, implode("\r\n", $headers));
 }else{
   print_r('error');
 }
