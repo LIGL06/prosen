@@ -3,6 +3,7 @@
 $email = isset($_POST['email']) ? $_POST['email'] : null;
 $name = isset($_POST['name']) ? $_POST['name'] : null;
 $service = isset($_POST['service']) ? $_POST['service'] : null;
+$phone = isset($_POST['phone']) ? $_POST['phone'] : null;
 if($email!=null && $name!=null){
     $subject = 'Gracias por ponerte en contacto';
     $message = "
@@ -25,7 +26,7 @@ if($email!=null && $name!=null){
             <h5 style='box-sizing: border-box;margin-top: 0;margin-bottom: .5rem;font-family: inherit;font-weight: 500;line-height: 1.2;color: inherit;font-size: 1.25rem;text-align: center!important;'>Hola, $name</h5>
             <p style='box-sizing: border-box;margin-top: 0;margin-bottom: .5rem;font-family: inherit;font-weight: 500;line-height: 1.2;color: inherit;font-size: 1.25rem;text-align: center!important;'>Gracias por ponerte contacto con nosotros. </p>
             <p style='box-sizing: border-box;margin-top: 0;margin-bottom: .5rem;font-family: inherit;font-weight: 500;line-height: 1.2;color: inherit;font-size: 1.25rem;text-align: center!important;'>Pronto uno de nuestros asesores te atenderá en el área de tu interés (<b>$service</b>).</p>
-            <br style='box-sizing: border-box;'> Por favor revisa tu bandeja de correo <b style='box-sizing: border-box;font-weight: bolder;'>no deseado</b> de manera continua.
+            <br style='box-sizing: border-box;'> Por favor revisa tu bandeja de correo <b style='box-sizing: border-box;font-weight: bolder;'>no deseado</b> de manera continua y/o el número $phone.
           </div>
         </div>
       </div>
@@ -43,6 +44,7 @@ if($email!=null && $name!=null){
     $headers[] = 'Bcc: Julio Morales <jmorales@prosen.com.mx>, Servicio al cliente PROSEN <sac@prosen.com.mx>';
     $headers[] = 'From: Servicio al cliente PROSEN <sac@prosen.com.mx>';
     
+    print_r($message);
     // Mail it
     mail("", $subject, $message, implode("\r\n", $headers));
 }else{

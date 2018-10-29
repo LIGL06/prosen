@@ -93,19 +93,31 @@ li{
     .carousel-inner{
         max-height: 600px;
     }
-    
+    #catalogModal li, #cotizeModal li{
+        font-size: 12px!important;
+        text-align: left;
+        padding-bottom: 1px;
+    }
+    .modalSmall{
+        font-size: 12px!important;
+    }
 }
 @media(max-width: 766px){
     .carousel-inner{
         max-height: 800px;
     }
+    #catalogModal li, #cotizeModal li{
+        font-size: 4vw!important;
+        text-align: left;
+        padding-bottom: 3px;
+    }
+    .modalSmall{
+        font-size: 4vw!important;
+    }
+    .modalBold{
+        font-size:3.2vw!important;
+    }
 }
-
 .overflow-hidden {
     overflow: hidden;
-}
-#catalogModal li, #cotizeModal li{
-    font-size: 3vw!important;
-    text-align: left;
-    padding-bottom: 3px;
 }
