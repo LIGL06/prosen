@@ -24,7 +24,7 @@
     <meta name="msapplication-TileColor" content="#9f00a7">
     <meta name="theme-color" content="#ffffff">
     <!-- CSS Global Compulsory -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
     <!-- CSS Implementing Plugins -->
     <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"> -->
     <!-- CSS Front Template -->
@@ -41,7 +41,7 @@
                         width="30" height="30" class="d-inline-block align-top" alt=""> PROSEN
                 </a>
                 <a class="py-2 d-none d-md-inline-block" href="#services">Servicios</a>
-                <a class="py-2 d-none d-md-inline-block" href="#portfolio">Portafolio</a>
+                <!-- <a class="py-2 d-none d-md-inline-block" href="#portfolio">Portafolio</a> -->
                 <a class="py-2 d-none d-md-inline-block" href="http://blog.prosen.com.mx">Blog</a>
                 <a class="py-2 d-none d-md-inline-block" href="#contact">Contacto</a>
             </div>
@@ -194,12 +194,11 @@
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
             </ol>
             <div class="carousel-inner" role="listbox">
                 <div class="carousel-item active">
                     <img class="d-block w-100"
-                        src="https://res.cloudinary.com/hammock-software/image/upload/c_scale,w_1280/v1576007403/pexels-photo-2898199_eiwndr.jpg"
+                        src="https://res.cloudinary.com/hammock-software/image/upload/c_scale,w_1280/v1612205356/IMG_97212_chqsnt.jpg"
                         alt="First slide">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>Servicios Lógísticos Integrales</h5>
@@ -208,7 +207,7 @@
                 </div>
                 <div class="carousel-item">
                     <img class="d-block w-100"
-                        src="https://res.cloudinary.com/hammock-software/image/upload/c_scale,w_1280/v1576007403/pexels-photo-2539462_vkpgud.jpg"
+                        src="https://res.cloudinary.com/hammock-software/image/upload/c_scale,w_1280/v1612205371/IMG_1537_b5opwl.jpg"
                         alt="Second slide">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>Materias Primas</h5>
@@ -217,7 +216,7 @@
                 </div>
                 <div class="carousel-item">
                     <img class="d-block w-100"
-                        src="https://res.cloudinary.com/hammock-software/image/upload/c_scale,w_1280/v1534903506/img_03_ue2zxe.jpg"
+                        src="https://res.cloudinary.com/hammock-software/image/upload/c_scale,w_1280/v1612206171/IMG_48462_budzpb.jpg"
                         alt="Third slide">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>Videovigilancia</h5>
@@ -228,11 +227,6 @@
                     <img class="d-block w-100"
                         src="https://res.cloudinary.com/hammock-software/image/upload/c_scale,w_1280/v1576007407/pexels-photo-942316_aywkys.jpg"
                         alt="Fourth slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100"
-                        src="https://res.cloudinary.com/hammock-software/image/upload/c_scale,w_1280/v1576007392/pexels-photo-179993_f4nyhq.jpg"
-                        alt="Fifth slide">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -370,10 +364,10 @@
         </div>
     </footer>
     <!-- JS Global Compulsory -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
     <!-- JS Implementing Plugins -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
     <!-- JS Front -->
     <script>
         $('.carousel').carousel();
@@ -381,12 +375,18 @@
             rules: {
                 email: {
                     required: true,
+                    email: true
                 },
                 name: {
                     required: true,
+                    minlength: 10
+                },
+                phone: {
+                    required:true,
+                    minlength: 10
                 },
                 service: {
-                    required: true,
+                    required: true
                 }
             },
             submitHandler: function (form) {
